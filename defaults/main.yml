@@ -1,0 +1,15 @@
+---
+influxdb2_ver: 2.0.3
+influxdb2_os: linux
+influxdb2_arch: amd64
+influxdb2_mirror: https://dl.influxdata.com/influxdb/releases
+influxdb2_parent_install_dir: /usr/local
+# defaults file for influxdb2
+influxdb2_checksums:
+  '2.0.3':
+    # https://dl.influxdata.com/influxdb/releases/influxdb2-2.0.3_darwin_amd64.tar.gz
+    darwin_amd64: sha256:bfb3f62206daf05b72994b1e5b8897022c10a90aa405fb5993b58119de71e92e
+    # https://dl.influxdata.com/influxdb/releases/influxdb2-2.0.3_linux_amd64.tar.gz
+    linux_amd64: sha256:d01f0b6d634406e0be1829f884ebf93423cc0c920743fa293a03b1533ffac4af
+    # https://dl.influxdata.com/influxdb/releases/influxdb2-2.0.3_linux_arm64.tar.gz
+    linux_arm64: sha256:0c67b0282cefc9b1052633008f5713d24f6d18f669d8f92abb2004e2541947b4
