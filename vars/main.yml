@@ -1,7 +1,7 @@
 ---
 # vars file for influxdb2
-influxdb2_platform: '{{ influxdb2_os }}_{{ influxdb2_arch }}'
-influxdb2_name: influxdb2-{{ influxdb2_ver }}_{{ influxdb2_platform }}
+influxdb2_platform: '{{ influxdb2_os }}-{{ influxdb2_arch }}'
+influxdb2_name: influxdb2-{{ influxdb2_ver }}-{{ influxdb2_platform }}
 influxdb2_tgz: '{{ influxdb2_name }}.tar.gz'
 influxdb2_tmp_tgz: /tmp/{{ influxdb2_tgz }}
 influxdb2_url: '{{ influxdb2_mirror }}/{{ influxdb2_tgz }}'
