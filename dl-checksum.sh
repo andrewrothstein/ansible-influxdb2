@@ -8,9 +8,9 @@ dl() {
     local os=$2
     local arch=$3
     local archive_type=${4:-tar.gz}
-    local platform="${os}_${arch}"
-    local file="influxdb2-${ver}_${platform}.${archive_type}"
-    # https://dl.influxdata.com/influxdb/releases/influxdb2-2.0.3_linux_amd64.tar.gz
+    local platform="${os}-${arch}"
+    local file="influxdb2-${ver}-${platform}.${archive_type}"
+    # https://dl.influxdata.com/influxdb/releases/influxdb2-2.0.6-linux-amd64.tar.gz
     local url=$MIRROR/$file
     local lfile=$DIR/$file
 
@@ -30,4 +30,4 @@ dl_ver() {
     dl $ver linux arm64
 }
 
-dl_ver ${1:-2.0.3}
+dl_ver ${1:-2.0.6}
