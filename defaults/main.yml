@@ -1,5 +1,5 @@
 ---
-influxdb2_ver: 2.0.6
+influxdb2_ver: 2.0.7
 influxdb2_os: linux
 influxdb2_arch: amd64
 influxdb2_mirror: https://dl.influxdata.com/influxdb/releases
@@ -27,3 +27,10 @@ influxdb2_checksums:
     linux-amd64: sha256:f24ab5afe20d095a0e44267bf21b094007015b5deaf8442c691130fa18ebc10d
     # https://dl.influxdata.com/influxdb/releases/influxdb2-2.0.6-linux-arm64.tar.gz
     linux-arm64: sha256:d77fe08751c0d1c8699bd4fa65af142f4a96c6c33255b6232a8867332f828898
+  '2.0.7':
+    # https://dl.influxdata.com/influxdb/releases/influxdb2-2.0.7-darwin-amd64.tar.gz
+    darwin-amd64: sha256:0d089d222a93482b16941c73345333ab3bd3656a8488e3a91c9d330242ddec3d
+    # https://dl.influxdata.com/influxdb/releases/influxdb2-2.0.7-linux-amd64.tar.gz
+    linux-amd64: sha256:bac6e6495b855479d325ea9996ad0301789613891daba2b386f84f1b11912d66
+    # https://dl.influxdata.com/influxdb/releases/influxdb2-2.0.7-linux-arm64.tar.gz
+    linux-arm64: sha256:55129ca31e5d0633c81ff17771d06c8604ad1a16be4f7c5c6142695a0bdb6ffc
