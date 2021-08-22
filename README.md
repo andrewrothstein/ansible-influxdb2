@@ -1,6 +1,6 @@
 andrewrothstein.influxdb2
 =========
-[![Build Status](https://travis-ci.org/andrewrothstein/ansible-influxdb2.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-influxdb2)
+![Build Status](https://github.com/andrewrothstein/ansible-influxdb2/actions/workflows/build.yml/badge.svg)
 
 Installs InfluxDB2
 
