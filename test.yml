@@ -3,8 +3,8 @@
   roles:
   - role: '{{ playbook_dir }}'
   tasks:
-  - command: /usr/local/bin/influx version
+  - command: /usr/local/bin/influxd version
     register: influxdb2_test_output
-  - name: influx version
+  - name: influxd version
     debug:
       msg: '{{ influxdb2_test_output.stdout }}'

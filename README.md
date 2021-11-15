@@ -2,7 +2,7 @@ andrewrothstein.influxdb2
 =========
 ![Build Status](https://github.com/andrewrothstein/ansible-influxdb2/actions/workflows/build.yml/badge.svg)
 
-Installs InfluxDB2
+Installs InfluxDB daemon
 
 Requirements
 ------------

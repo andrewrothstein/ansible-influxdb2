@@ -44,7 +44,6 @@
   become: yes
   become_user: root
   with_items:
-    - influx
     - influxd
   file:
     src: '{{ influxdb2_install_dir }}/{{ item }}'
