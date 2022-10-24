@@ -1,4 +1,6 @@
 ---
+- include_role:
+    name: andrewrothstein.unarchive-deps
 - name: resolve platform specific vars
   include_vars: '{{ item }}'
   with_first_found:
@@ -10,42 +12,49 @@
       paths:
         - '{{ role_path }}/vars'
 - name: check for install at {{ influxdb2_install_dir }}
-  become: yes
+  become: true
   become_user: root
   stat:
     path: '{{ influxdb2_install_dir }}'
-  changed_when: False
+  changed_when: false
   register: influxdb2_binary
 - when: not influxdb2_binary.stat.exists
   block:
     - name: downloading {{ influxdb2_url }} to {{ influxdb2_tmp_tgz }}
-      become: yes
+      become: true
       become_user: root
       get_url:
         url: '{{ influxdb2_url }}'
         dest: '{{ influxdb2_tmp_tgz }}'
         checksum: '{{ influxdb2_checksum }}'
-    - name: unarchive {{ influxdb2_tmp_tgz }} to {{ influxdb2_parent_install_dir }}
-      become: yes
+    - name: mkdir {{ influxdb2_install_dir }}
+      become: true
+      become_user: root
+      file:
+        path: '{{ influxdb2_install_dir }}'
+        state: directory
+        mode: 0755
+    - name: unarchive {{ influxdb2_tmp_tgz }} to {{ influxdb2_install_dir }}
+      become: true
       become_user: root
       unarchive:
-        remote_src: yes
+        remote_src: true
         src: '{{ influxdb2_tmp_tgz }}'
-        dest: '{{ influxdb2_parent_install_dir }}'
-        creates: '{{ influxdb2_install_dir }}'
+        dest: '{{ influxdb2_install_dir }}'
+        creates: '{{ influxdb2_install_subdir }}'
   always:
     - name: rm {{ influxdb2_tmp_tgz }}
-      become: yes
+      become: true
       become_user: root
       file:
         path: '{{ influxdb2_tmp_tgz }}'
         state: absent
-- name: link applications in {{ influxdb2_install_dir }} to {{ influxdb2_parent_install_dir }}/bin
-  become: yes
+- name: link applications in {{ influxdb2_install_subdir }} to {{ influxdb2_parent_install_dir }}/bin
+  become: true
   become_user: root
   with_items:
     - influxd
   file:
-    src: '{{ influxdb2_install_dir }}/{{ item }}'
+    src: '{{ influxdb2_install_subdir }}/{{ item }}'
     dest: '{{ influxdb2_parent_install_dir }}/bin/{{ item }}'
     state: link
