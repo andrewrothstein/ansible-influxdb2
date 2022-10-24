@@ -4,10 +4,3 @@ influxdb2_os: '{{ ansible_system | lower }}'
 influxdb2_arch: '{{ influxdb2_arch_map[ansible_architecture] }}'
 influxdb2_platform: '{{ influxdb2_os }}-{{ influxdb2_arch }}'
 influxdb2_fq_ver: '{{ influxdb2_ver.major }}.{{ influxdb2_ver.minor }}.{{ influxdb2_ver.patch }}'
-influxdb2_name: influxdb{{ influxdb2_ver.major }}-{{ influxdb2_fq_ver }}-{{ influxdb2_platform }}
-influxdb2_tgz: '{{ influxdb2_name }}.{{ influxdb2_archive_type | default("tar.gz") }}'
-influxdb2_tmp_tgz: /tmp/{{ influxdb2_tgz }}
-influxdb2_url: '{{ influxdb2_mirror }}/{{ influxdb2_tgz }}'
-influxdb2_checksum: '{{ influxdb2_checksums[influxdb2_fq_ver][influxdb2_platform] }}'
-influxdb2_install_dir: '{{ influxdb2_parent_install_dir }}/influxdb{{ influxdb2_ver.major }}-{{ influxdb2_fq_ver }}'
-influxdb2_install_subdir: '{{ influxdb2_install_dir }}/influxdb{{ influxdb2_ver.major }}_{{ influxdb2_os }}_{{ influxdb2_arch }}'

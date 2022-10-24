@@ -4,7 +4,12 @@
   - role: '{{ playbook_dir }}'
   tasks:
   - command: /usr/local/bin/influxd version
-    register: influxdb2_test_output
+    register: influxdb2_test_server_output
   - name: influxd version
     debug:
-      msg: '{{ influxdb2_test_output.stdout }}'
+      msg: '{{ influxdb2_test_server_output.stdout }}'
+  - command: /usr/local/bin/influx version
+    register: influxdb2_test_client_output
+  - name: influx version
+    debug:
+      msg: '{{ influxdb2_test_client_output.stdout }}'
