@@ -54,12 +54,4 @@ dl_ver() {
     dl_ver_app $ver influx
 }
 
-dl_ver 2.0.5
-dl_ver 2.0.6
-dl_ver 2.0.7
-dl_ver 2.0.8
-dl_ver 2.0.9
-dl_ver 2.1.1
-dl_ver 2.2.0
-dl_ver 2.3.0
 dl_ver ${1:-2.4.0}
