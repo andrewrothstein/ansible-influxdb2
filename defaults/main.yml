@@ -10,12 +10,12 @@ influxdb2_arch_map:
   x86_64: amd64
 influxdb2_mirror: https://dl.influxdata.com/influxdb/releases
 influxdb2_parent_install_dir: /usr/local
-influxdb2_roles:
-  - client
-  - server
+influxdb2_apps:
+  - influxd
+  - influx
 influxdb2_checksums:
   '2.0.5':
-    server:
+    influxd:
       # https://dl.influxdata.com/influxdb/releases/influxdb2-2.0.5-darwin-amd64.tar.gz
       darwin-amd64: sha256:45386f2e78703be54cbd73e73205261a419820509995294aad69976614c2dac1
       # https://dl.influxdata.com/influxdb/releases/influxdb2-2.0.5-linux-amd64.tar.gz
@@ -24,7 +24,7 @@ influxdb2_checksums:
       linux-arm64: sha256:b563cb2db284dbfa717a2170a5438b2c7562c3efec774d45cf95ea81d2876b97
       # https://dl.influxdata.com/influxdb/releases/influxdb2-2.0.5-windows-amd64.zip
       windows-amd64: sha256:fa2c9b7f27fa7bd97cabf85977b644099138f134064a46c582d4edb29540fdca
-    client:
+    influx:
       # https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.0.5-darwin-amd64.tar.gz
       darwin-amd64: sha256:752ae6d520daf480fa50b7fb74b4ac8e96d49d67938b34ad40671126cbf7af3d
       # https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.0.5-linux-amd64.tar.gz
@@ -34,7 +34,7 @@ influxdb2_checksums:
       # https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.0.5-windows-amd64.zip
       windows-amd64: sha256:808bae7b55f1fa2ce9e98b47c530c22b963dea879331c95620c80b8a84962bd6
   '2.0.6':
-    server:
+    influxd:
       # https://dl.influxdata.com/influxdb/releases/influxdb2-2.0.6-darwin-amd64.tar.gz
       darwin-amd64: sha256:2091761ba37209c91c021c9b2c9590043f515ff39511188aa9021f1feae476b2
       # https://dl.influxdata.com/influxdb/releases/influxdb2-2.0.6-linux-amd64.tar.gz
@@ -43,7 +43,7 @@ influxdb2_checksums:
       linux-arm64: sha256:d77fe08751c0d1c8699bd4fa65af142f4a96c6c33255b6232a8867332f828898
       # https://dl.influxdata.com/influxdb/releases/influxdb2-2.0.6-windows-amd64.zip
       windows-amd64: sha256:f5c50e6a9d8df3ee145ad655a6dd8084959dd40f5db391ffe939c341abe4974a
-    client:
+    influx:
       # https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.0.6-darwin-amd64.tar.gz
       darwin-amd64: sha256:db62fd5be1fbe690a01b7f3aaf1f4c44ceabd1a8e5d95365a2e33553ed868ac2
       # https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.0.6-linux-amd64.tar.gz
@@ -53,7 +53,7 @@ influxdb2_checksums:
       # https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.0.6-windows-amd64.zip
       windows-amd64: sha256:29023770f3e025e2da3557066418cb0ee4648ff19f6a7d413722649ac9f55b7f
   '2.0.7':
-    server:
+    influxd:
       # https://dl.influxdata.com/influxdb/releases/influxdb2-2.0.7-darwin-amd64.tar.gz
       darwin-amd64: sha256:0d089d222a93482b16941c73345333ab3bd3656a8488e3a91c9d330242ddec3d
       # https://dl.influxdata.com/influxdb/releases/influxdb2-2.0.7-linux-amd64.tar.gz
@@ -62,7 +62,7 @@ influxdb2_checksums:
       linux-arm64: sha256:55129ca31e5d0633c81ff17771d06c8604ad1a16be4f7c5c6142695a0bdb6ffc
       # https://dl.influxdata.com/influxdb/releases/influxdb2-2.0.7-windows-amd64.zip
       windows-amd64: sha256:ba6d3243f86dc82d5241f82e7536e690208348ce092fd029235bca774010d89c
-    client:
+    influx:
       # https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.0.7-darwin-amd64.tar.gz
       darwin-amd64: sha256:f046e2bae578e56bf6b854b3229dbd99df1140a115332e41a74c1a7ff46a0dfc
       # https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.0.7-linux-amd64.tar.gz
@@ -72,7 +72,7 @@ influxdb2_checksums:
       # https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.0.7-windows-amd64.zip
       windows-amd64: sha256:1c990ca80dd6db20482f8b825cec1628489c8d0957fcf21037b88d71cbcfc5ca
   '2.0.8':
-    server:
+    influxd:
       # https://dl.influxdata.com/influxdb/releases/influxdb2-2.0.8-darwin-amd64.tar.gz
       darwin-amd64: sha256:19d8fd374dab652c2996a1ecc5df3f3a480753dd59f13a389aaf527d1d671576
       # https://dl.influxdata.com/influxdb/releases/influxdb2-2.0.8-linux-amd64.tar.gz
@@ -81,7 +81,7 @@ influxdb2_checksums:
       linux-arm64: sha256:df13684f45ac104a4fa987ed4275fd7f164a77d9a7916b1d51e46b1b62d083d6
       # https://dl.influxdata.com/influxdb/releases/influxdb2-2.0.8-windows-amd64.zip
       windows-amd64: sha256:68584fcb22ff63d35215eff055a5e6d64e9f5da939fe11adae85b661436c1e4b
-    client:
+    influx:
       # https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.0.8-darwin-amd64.tar.gz
       darwin-amd64: sha256:06a28f2f3de0010e5413b8aec74b3a611ef4be668c16485e59c87327bc6b3bc5
       # https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.0.8-linux-amd64.tar.gz
@@ -91,7 +91,7 @@ influxdb2_checksums:
       # https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.0.8-windows-amd64.zip
       windows-amd64: sha256:2e0c4c793e0a4f5e5df436cc3d926202ccccbefc9bc51db27df40b7c2b31944a
   '2.0.9':
-    server:
+    influxd:
       # https://dl.influxdata.com/influxdb/releases/influxdb2-2.0.9-darwin-amd64.tar.gz
       darwin-amd64: sha256:4d15e8eb525274952cb06027eb6c84b2b74cdb29cf2f9ef5b64270fa07874463
       # https://dl.influxdata.com/influxdb/releases/influxdb2-2.0.9-linux-amd64.tar.gz
@@ -100,7 +100,7 @@ influxdb2_checksums:
       linux-arm64: sha256:cce831ee77258972887af5f3be361f5768dda97b32b296d34e3be88d425bcde0
       # https://dl.influxdata.com/influxdb/releases/influxdb2-2.0.9-windows-amd64.zip
       windows-amd64: sha256:0eab271a67596438f70bf8d4f9d3e27ba87b1c8272480ed95fbf6cf78f226a35
-    client:
+    influx:
       # https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.0.9-darwin-amd64.tar.gz
       darwin-amd64: sha256:a312e8c72893b4b5d403bb526e3ae72ba9aa7bb127c05a062183c800f63d6147
       # https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.0.9-linux-amd64.tar.gz
@@ -110,7 +110,7 @@ influxdb2_checksums:
       # https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.0.9-windows-amd64.zip
       windows-amd64: sha256:2bf7978f7a2cbbc37fb95abc1e853f2ab98b7911ef3643ba47f6b5ea67437489
   '2.1.1':
-    server:
+    influxd:
       # https://dl.influxdata.com/influxdb/releases/influxdb2-2.1.1-darwin-amd64.tar.gz
       darwin-amd64: sha256:64c6aed0920ec3b502ad4174de5bdb078e3f2de4eea58d6322bdf2a2a57d1e26
       # https://dl.influxdata.com/influxdb/releases/influxdb2-2.1.1-linux-amd64.tar.gz
@@ -119,7 +119,7 @@ influxdb2_checksums:
       linux-arm64: sha256:a5d9c355231f69e6a1141c4af02136fa5696979a4d79dd16767fbd110feffb88
       # https://dl.influxdata.com/influxdb/releases/influxdb2-2.1.1-windows-amd64.zip
       windows-amd64: sha256:912ff645a20ea7623f453b76af32d26b6a2160e6ac7fa0ac60e67c8d80c8a0df
-    client:
+    influx:
       # https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.1.1-darwin-amd64.tar.gz
       darwin-amd64: sha256:2183c4b0dca1342a8666ec563cdbda1934d6abf031266e94a16209fae7735d5e
       # https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.1.1-linux-amd64.tar.gz
@@ -129,7 +129,7 @@ influxdb2_checksums:
       # https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.1.1-windows-amd64.zip
       windows-amd64: sha256:c21000262700000610828321dd078577be2808db19aa92c4b403bf855fce2869
   '2.2.0':
-    server:
+    influxd:
       # https://dl.influxdata.com/influxdb/releases/influxdb2-2.2.0-darwin-amd64.tar.gz
       darwin-amd64: sha256:a3c6b4e1f0eda63382860424394aa37636acb47a810436471e218844046ce7cf
       # https://dl.influxdata.com/influxdb/releases/influxdb2-2.2.0-linux-amd64.tar.gz
@@ -138,7 +138,7 @@ influxdb2_checksums:
       linux-arm64: sha256:a80d2a542506c999c08bc218df2ff3a12a1cbe9ff03c6911a5780d98ad83895d
       # https://dl.influxdata.com/influxdb/releases/influxdb2-2.2.0-windows-amd64.zip
       windows-amd64: sha256:b8bfa5619ad33b6bfd517fa88ab42cc111e8e3f196eb3294b1b4c583e558a3c7
-    client:
+    influx:
       # https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.2.0-darwin-amd64.tar.gz
       darwin-amd64: sha256:e1879aaed43eab8bd9fa9bed3030328db99ccfae5f96644fb6ab62c366c02a14
       # https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.2.0-linux-amd64.tar.gz
@@ -148,7 +148,7 @@ influxdb2_checksums:
       # https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.2.0-windows-amd64.zip
       windows-amd64: sha256:ffb1792787a1829bdcfa1c1836b11c6f0437ac1fb835c3cfc0306b79e579dd6e
   '2.3.0':
-    server:
+    influxd:
       # https://dl.influxdata.com/influxdb/releases/influxdb2-2.3.0-darwin-amd64.tar.gz
       darwin-amd64: sha256:fe4830721622a7268b77068dfb5eeedb289880c8742c1bd22be0327b97c9fd55
       # https://dl.influxdata.com/influxdb/releases/influxdb2-2.3.0-linux-amd64.tar.gz
@@ -157,7 +157,7 @@ influxdb2_checksums:
       linux-arm64: sha256:fe8c4cf9b8ed025320b18c33c32553510e4a18bbe27765a4f34d1f8997c8edef
       # https://dl.influxdata.com/influxdb/releases/influxdb2-2.3.0-windows-amd64.zip
       windows-amd64: sha256:c8edf601922cc2f7134cdfbf36f0b95bfedf385c17a166d164e7bb212ba1e4a9
-    client:
+    influx:
       # https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.3.0-darwin-amd64.tar.gz
       darwin-amd64: sha256:946ffd216202fb3dbdcfa8c6fdda514f353c0220ee819409298b2d38b27eb163
       # https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.3.0-linux-amd64.tar.gz
@@ -167,7 +167,7 @@ influxdb2_checksums:
       # https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.3.0-windows-amd64.zip
       windows-amd64: sha256:a2ccaac55725f5d1ebc46399845df56d9f4584e553fcb5485ef829200b8b7a17
   '2.4.0':
-    server:
+    influxd:
       # https://dl.influxdata.com/influxdb/releases/influxdb2-2.4.0-darwin-amd64.tar.gz
       darwin-amd64: sha256:156c52b6999134284abae7b110d25416740414c56702c29fd8efe00b6be98682
       # https://dl.influxdata.com/influxdb/releases/influxdb2-2.4.0-linux-amd64.tar.gz
@@ -176,7 +176,7 @@ influxdb2_checksums:
       linux-arm64: sha256:4fde9265af5ab9a2b8fbb10bb5df42bd809fd24af352cd7eca0ee9ecf4fdb3b9
       # https://dl.influxdata.com/influxdb/releases/influxdb2-2.4.0-windows-amd64.zip
       windows-amd64: sha256:07769bd83e5f211490e1d3dac3cfc0cb674a25edc860137f5df444856308fa4e
-    client:
+    influx:
       # https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.4.0-darwin-amd64.tar.gz
       darwin-amd64: sha256:bf36c892cd85f4d16d3b94f204cd90df5feb52ab6fa0dd3b7c831720c58ed87f
       # https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.4.0-linux-amd64.tar.gz

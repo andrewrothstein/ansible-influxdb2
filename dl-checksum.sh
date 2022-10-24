@@ -11,14 +11,18 @@ dl_app() {
     local archive_type=${5:-tar.gz}
     local platform="${os}-${arch}"
     local file=""
-    if [ "$app" = "server" ];
+    if [ "$app" = "influxd" ];
     then
+        # https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.4.0-linux-amd64.tar.gz
         file="influxdb2-${ver}-${platform}.${archive_type}"
-    else
+    elif [ "$app" = "influx" ];
+    then
+        # https://dl.influxdata.com/influxdb/releases/influxdb2-2.4.0-linux-amd64.tar.gz
         file="influxdb2-client-${ver}-${platform}.${archive_type}"
+    else
+        echo "unknown app: $app"
+        exit -1
     fi
-    # https://dl.influxdata.com/influxdb/releases/influxdb2-2.4.0-linux-amd64.tar.gz
-    # https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.4.0-linux-amd64.tar.gz
     local url=$MIRROR/$file
     local lfile=$DIR/$file
 
@@ -46,8 +50,8 @@ dl_ver_app() {
 dl_ver() {
     local ver=$1
     printf "  '%s':\n" $ver
-    dl_ver_app $ver server
-    dl_ver_app $ver client
+    dl_ver_app $ver influxd
+    dl_ver_app $ver influx
 }
 
 dl_ver 2.0.5

@@ -1,14 +1,11 @@
 ---
-influxdb2_role_infix: '{% if influxdb2_role == "client" %}-client{% endif %}'
-influxdb2_archive: influxdb{{ influxdb2_ver.major }}{{ influxdb2_role_infix }}-{{ influxdb2_fq_ver }}-{{ influxdb2_platform }}.{{ influxdb2_archive_type | default("tar.gz") }}
+influxdb2_app_infix: '{% if influxdb2_app == "influx" %}-client{% endif %}'
+influxdb2_archive: influxdb{{ influxdb2_ver.major }}{{ influxdb2_app_infix }}-{{ influxdb2_fq_ver }}-{{ influxdb2_platform }}.{{ influxdb2_archive_type | default("tar.gz") }}
 influxdb2_tmp_archive: /tmp/{{ influxdb2_archive }}
 influxdb2_url: '{{ influxdb2_mirror }}/{{ influxdb2_archive }}'
-influxdb2_checksum: '{{ influxdb2_checksums[influxdb2_fq_ver][influxdb2_role][influxdb2_platform] }}'
+influxdb2_checksum: '{{ influxdb2_checksums[influxdb2_fq_ver][influxdb2_app][influxdb2_platform] }}'
 influxdb2_install_dir: '{{ influxdb2_parent_install_dir }}/influxdb{{ influxdb2_ver.major }}-{{ influxdb2_fq_ver }}'
-influxdb2_install_subdir_suffix: '{% if influxdb2_role == "server" %}_{{ influxdb2_os }}_{{ influxdb2_arch }}{% else %}{{ influxdb2_role_infix }}-{{ influxdb2_fq_ver }}-{{ influxdb2_platform }}{% endif %}'
+influxdb2_install_subdir_suffix: '{% if influxdb2_app == "influxd" %}_{{ influxdb2_os }}_{{ influxdb2_arch }}{% else %}{{ influxdb2_app_infix }}-{{ influxdb2_fq_ver }}-{{ influxdb2_platform }}{% endif %}'
 influxdb2_install_subdir: '{{ influxdb2_install_dir }}/influxdb{{ influxdb2_ver.major }}{{ influxdb2_install_subdir_suffix }}'
-influxdb2_app_items:
-  server:
-    - influxd
-  client:
-    - influx
+influxdb2_install_exe: '{{ influxdb2_install_subdir }}/{{ influxdb2_app }}'
+influxdb2_install_link: '{{ influxdb2_parent_install_dir }}/bin/{{ influxdb2_app }}'

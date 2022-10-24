@@ -39,11 +39,10 @@
       file:
         path: '{{ influxdb2_tmp_archive }}'
         state: absent
-- name: link applications in {{ influxdb2_install_subdir }} to {{ influxdb2_parent_install_dir }}/bin
+- name: linking {{ influxdb2_install_link }} to {{ influxdb2_install_exe }}
   become: true
   become_user: root
-  with_items: '{{ influxdb2_app_items[influxdb2_role] }}'
   file:
-    src: '{{ influxdb2_install_subdir }}/{{ item }}'
-    dest: '{{ influxdb2_parent_install_dir }}/bin/{{ item }}'
+    src: '{{ influxdb2_install_exe }}'
+    dest: '{{ influxdb2_install_link }}'
     state: link

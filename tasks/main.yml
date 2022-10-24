@@ -11,7 +11,7 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
-- loop: '{{ influxdb2_roles | default([]) }}'
+- loop: '{{ influxdb2_apps | default([]) }}'
   loop_control:
-    loop_var: influxdb2_role
+    loop_var: influxdb2_app
   include_tasks: install-app.yml
