@@ -54,4 +54,4 @@ dl_ver() {
     dl_ver_app $ver influx
 }
 
-dl_ver ${1:-2.4.0}
+dl_ver ${1:-2.6.0}
